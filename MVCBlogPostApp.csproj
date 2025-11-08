@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework> <!-- Or your target version -->
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RollForward>Major</RollForward>
   </PropertyGroup>
 
 </Project>
