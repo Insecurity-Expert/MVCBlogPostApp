@@ -1,0 +1,5 @@
+C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net9.0\MVCBlogPostApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net9.0\MVCBlogPostApp.AssemblyInfoInputs.cache
+C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net9.0\MVCBlogPostApp.AssemblyInfo.cs
+C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net9.0\MVCBlogPostApp.csproj.CoreCompileInputs.cache
+C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net9.0\MVCBlogPostApp.sourcelink.json
