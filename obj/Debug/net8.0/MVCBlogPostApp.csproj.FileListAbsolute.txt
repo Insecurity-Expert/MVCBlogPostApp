@@ -26,3 +26,4 @@ C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\refint\MVCBlogPostApp.dl
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.pdb
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.genruntimeconfig.cache
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\ref\MVCBlogPostApp.dll
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.staticwebassets.runtime.json
