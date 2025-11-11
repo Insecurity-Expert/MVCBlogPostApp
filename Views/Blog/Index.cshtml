@@ -1,32 +1,96 @@
+@* The model should be a list/collection of posts *@
+@model IEnumerable<SimpleBlogApp.Models.Post>
+
 @{
     ViewData["Title"] = "Group 10 Blog Posts";
 }
 
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two unequal columns that float next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+
+    /* The card effect */
+    .card {
+       background-color: white;
+       padding: 20px;
+       margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Link styling */
+    .blog-card-link {
+        text-decoration: none; /* Removes the underline from the link */
+        color: inherit;       /* Makes the text color normal */
+        display: block;
+        cursor: pointer;
+    }
+
+    .blog-card-link:hover .card {
+        transform: translateY(-5px); /* Lifts the card slightly on hover */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Adds a subtle shadow */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+</style>
+
+@* This is the main container for the two-column layout *@
 <div class="row">
+
+  @* ===== LEFT COLUMN - BLOG POSTS ===== *@
   <div class="leftcolumn">
-    <div class="card">
-      <h2>Daily Memes Collection</h2>
-      <h5>Daily Dose, Nov 10, 2025</h5>
-      <div class="image" style="height:100; width:100%;">
-    <img src="~/images/harold.jpg" alt="A Hide the Pain Harold Meme" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
-      <p>Memes we collected today.</p>
-    </div>
-    <div class="card">
-      <h2>Technologia</h2>
-      <h5>Tech Information, Nov 09, 2025</h5>
-      <div class="image" style="height:100%; width:100%;">
-    <img src="~/images/technologia.jpg" alt="A picture with a caption saying Technologia with computer parts in the background." style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-      <p>Mindblowing technology that are awesome.</p>
-    </div>
+    
+    @* The loop should be INSIDE the left column *@
+    @foreach (var post in Model)
+    {
+      @* Each post card is wrapped in a link to its details page *@
+      <a href="/Blog/Details/@post.Id" class="blog-card-link">
+        <div class="card">
+          @* Use the properties from the 'post' object *@
+          <h2>@post.Title</h2>
+          <h5>By @post.Author, @post.PublishedDate.ToString("MMM dd, yyyy")</h5>
+          
+          @* Example of how you would include an image per-post if you have an ImageUrl property *@
+          
+          <div class="image" style="height:100%;">
+            <img src="~/images/@post.ImageUrl" alt="@post.Title" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          
+          
+          <p>@post.Summary</p>
+        </div>
+      </a>
+    }
   </div>
+
+  @* ===== RIGHT COLUMN - STATIC CONTENT ===== *@
   <div class="rightcolumn">
     <div class="card">
       <h2>About Us</h2>
-     <div class="image" style="height:100; width:100%;">
-    <img src="~/images/cats.jpg" alt="A litter of 4 Kittens metaphorically referring to us." style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="image" style="height:200px;">
+        <img src="~/images/cats.jpg" alt="A litter of 4 Kittens metaphorically referring to us." style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
       <p>We are Group 10 composed of; Gaa, Fullero, Nataba & Velasco</p>
     </div>
   </div>
 </div>
+

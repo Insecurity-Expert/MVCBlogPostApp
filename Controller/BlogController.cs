@@ -2,33 +2,73 @@ using Microsoft.AspNetCore.Mvc;
 using SimpleBlogApp.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SimpleBlogApp.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly List<Post> _posts = new List<Post>
-        {
-            new Post { Id = 1, Title = "First Post", Content = "This is the content of the first post.", Author = "Author One" },
-            new Post { Id = 2, Title = "Second Post", Content = "This is the content of the second post.", Author = "Author Two" },
-            new Post { Id = 3, Title = "Third Post", Content = "This is the content of the third post.", Author = "Author Three" }
-        };
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        // GET: /Blog
-        public IActionResult Index()
+        public BlogController(IWebHostEnvironment hostEnvironment)
         {
-            return View(_posts);
+            _hostEnvironment = hostEnvironment;
         }
 
-        // GET: /Blog/Details/1
+        private Post LoadPostMetadata(int id)
+        {
+            var post = new Post { Id = id };
+            var filePath = Path.Combine(_hostEnvironment.ContentRootPath, $"Views/Blog/Posts/Post{id}.cshtml");
+
+            if (System.IO.File.Exists(filePath))
+            {
+                var content = System.IO.File.ReadAllText(filePath);
+                
+                // Extract metadata from the Razor file
+                post.Title = ExtractValue(content, "postTitle");
+                post.Author = ExtractValue(content, "postAuthor");
+                post.ImageUrl = ExtractValue(content, "postImageUrl");
+                post.Summary = ExtractSummary(content);
+            }
+
+            post.PublishedDate = DateTime.UtcNow.AddHours(8);
+            return post;
+        }
+
+        private string ExtractValue(string content, string variable)
+        {
+            var pattern = $@"var\s+{variable}\s*=\s*""([^""]*)"";";
+            var match = Regex.Match(content, pattern);
+            return match.Success ? match.Groups[1].Value : "";
+        }
+
+        private string ExtractSummary(string content)
+        {
+            var pattern = @"<h3>Summary</h3>\s*<p>([^<]*)</p>";
+            var match = Regex.Match(content, pattern);
+            return match.Success ? match.Groups[1].Value.Trim() : "";
+        }
+
+        public IActionResult Index()
+        {
+            var posts = new List<Post>
+            {
+                LoadPostMetadata(1),
+                LoadPostMetadata(2)
+            };
+            return View(posts);
+        }
+
         public IActionResult Details(int id)
         {
-            var post = _posts.FirstOrDefault(p => p.Id == id);
-            if (post == null)
+            var details = LoadPostMetadata(id);
+
+            if (string.IsNullOrEmpty(details.Title))
             {
                 return NotFound();
             }
-            return View(post);
+
+            return View(details);
         }
     }
 }

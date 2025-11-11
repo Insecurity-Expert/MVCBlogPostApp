@@ -45,16 +45,18 @@
   <div class="leftcolumn">
     <div class="card">
       <h2>@Model.Title</h2>
-      <h5>By @Model.Author</h5>
+      <h5>By @Model.Author, @Model.PublishedDate.ToString("MMM dd, yyyy")</h5>
       
       @if (!string.IsNullOrEmpty(Model.ImageUrl))
       {
-        <div class="image" style="height:300px; margin-bottom: 20px;">
+        <div class="image" style="height:500px; margin-bottom: 20px;">
           <img src="~/images/@Model.ImageUrl" alt="@Model.Title" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
       }
       
-      <p style="font-size: 16px; line-height: 1.6;">@Model.Content</p>
+      <p style="font-size: 16px; line-height: 1.6;">
+        @await Html.PartialAsync($"Posts/Post{Model.Id}")
+      </p>
     </div>
   </div>
 

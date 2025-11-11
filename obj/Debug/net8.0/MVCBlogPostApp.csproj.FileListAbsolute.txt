@@ -1,3 +1,10 @@
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.staticwebassets.runtime.json
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.staticwebassets.endpoints.json
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.exe
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.deps.json
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.runtimeconfig.json
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.dll
+C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.pdb
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.AssemblyInfoInputs.cache
@@ -7,12 +14,6 @@ C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.MvcApplic
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.RazorAssemblyInfo.cache
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.RazorAssemblyInfo.cs
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.sourcelink.json
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.staticwebassets.endpoints.json
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.exe
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.deps.json
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.runtimeconfig.json
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.dll
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.pdb
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -26,4 +27,3 @@ C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\refint\MVCBlogPostApp.dl
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.pdb
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\MVCBlogPostApp.genruntimeconfig.cache
 C:\Users\angel\projects\MVCBlogPostApp\obj\Debug\net8.0\ref\MVCBlogPostApp.dll
-C:\Users\angel\projects\MVCBlogPostApp\bin\Debug\net8.0\MVCBlogPostApp.staticwebassets.runtime.json
